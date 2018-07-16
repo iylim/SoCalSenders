@@ -1,0 +1,20 @@
+<h1> Submit a New Route </h1>
+<%= form_for @route do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+<br>
+    <%= f.label :difficulty %>
+    <%= f.text_field :difficulty %>
+<br>
+    <%= f.label :route_type %>
+    <%= f.text_field :route_type %>
+<br>
+    <%= f.label :pitches %>
+    <%= f.text_field :pitches %>
+<br>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+<br>
+
+ <%= f.submit 'Submit' %>
+ <% end %>

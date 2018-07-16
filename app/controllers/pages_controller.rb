@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
     def show
-        @post = Post.find(params[:id])
+        render "pages/#{params[:page]}"
     end
+    
 end

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Socalsenders</title>
+    <title>SoCal Senders</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,7 +9,27 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+<body>
+    <nav> 
+        <div><img src="logo.png"></div>
+        <div><a href="/"> Home </a></div>
+        <div><a href="/routes/"> Routes </a></div>
+        <div><a href="/pictures/"> Pictures </a></div>
+        <div><a href="#"> Forum </a></div>
+        <div><a href="/pages/rating"> Rating Info </a></div>
+        <div class="search"><input placeholder="Search"></input> <button>Go</button> </div>
+    </nav>
+    <p>
+    <% if current_user %>
+      Welcome, <%= current_user.name %>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+    <% else %>
+      <%= link_to 'Log In', login_path %>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <%= link_to 'Sign Up', new_user_path %>
+    <% end %>
+</p>
     <%= yield %>
   </body>
 </html>
