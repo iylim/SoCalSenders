@@ -2,14 +2,15 @@ class CommentsController < ApplicationController
     def new
         @comment = Comment.new
     end
+
     def create
-        route_id = params['comment']['route_id'].to_i
         @comment = Comment.new(comment_params)
-        @comment.user_id = current_user
+        @comment.user = current_user
+        @comment.route_id = params[:route_id]
        if @comment.save
-        redirect_to "/routes/#{route_id}"
+        redirect_to route_path(params[:route_id])
        else
-        redirect_to "routes/#{route_id}/comments/new"
+        redirect_to new_route_comment_path(params[:route_id])
        end
     end
 

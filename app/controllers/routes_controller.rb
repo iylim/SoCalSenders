@@ -43,6 +43,6 @@ class RoutesController < ApplicationController
     private
 
     def route_params
-        params.require(:route).permit(:name, :difficulty, :route_type, :pitches, :description, :pictures)
+        params.require(:route).permit(:name, :difficulty, :route_type, :pitches, :description, :pictures, :route_id)
     end
 end

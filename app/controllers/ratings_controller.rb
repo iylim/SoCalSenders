@@ -1,20 +1,14 @@
 class RatingsController < ApplicationController
-    def new
-        @rating = Rating.new
-    end
 
     def create
-        route_id = params['rating']['route_id'].to_i
-        @rating = Rating.new(comment_params)
-        @rating.user_id = current_user
-       if @rating.save
-        redirect_to "/routes/#{route_id}"
-       else
-        redirect_to "routes/#{route_id}/ratings/new"
-       end
+        @rating = Rating.new(score: params[:score].to_i)
+        @rating.user = current_user
+        @rating.route_id = params[:route_id]
+        if @rating.save
+            redirect_to route_path(params[:route_id])
+        else
+            redirect_to route_path(params[:route_id])
+        end
     end
 
-    def show 
-        @rating = Rating.find(params[:id])
-    end
 end
