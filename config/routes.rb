@@ -4,10 +4,14 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :routes
   resources :pictures
-  resources :ratings, only: [:update]
+
+  get '/routes/:id/ratings/new' => 'ratings#new'
+  get '/routes/:id/comments/new' => 'comments#new'
+  post '/comments' => 'comments#create'
+  post '/ratings' => 'ratings#create'
   get '/pages/:page' => 'pages#show'
 
-  get '/login', to: 'sessions#new'
-  get '/logout', to: 'sessions#destroy'
+  get '/login' => 'sessions#new'
+  get '/logout' => 'sessions#destroy'
 
 end

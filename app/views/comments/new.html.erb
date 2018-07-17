@@ -1,0 +1,15 @@
+<h1> Add comment </h1>
+<%= if @comment == 0 %>
+<%= form_for @comment do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+    <br>
+    <%= f.hidden_field :route_id, value: params[:id] %> 
+    <br>
+    <%= f.submit 'Submit' %>
+<% else %>
+    <%= redirect_to "/routes/#{route_id}" %>
+<% end %>

@@ -1,27 +1,41 @@
-<%= link_to 'All routes', '/routes/' %>
-<br>
+<h3><%= link_to 'All routes', '/routes/' %></h3>
 <h1> <%= @route.name %></h1>
-<br>
 <hr>
-<p> 
-Rating: <%= image_tag "4stars.png", :size => "80x25" %> < rate this route > <br>
-Difficulty: <%= @route.difficulty %> <br>
-Route Type: <%= @route.route_type %> <br>
-Pitches/Height: <%= @route.pitches %> <br>
+<p class ="route"> 
+    Rating: <%= image_tag "4stars.png", :size => "80x25" %> 
+  <%= link_to 'Rate Me', "/routes/#{@route.id}/ratings/new" %> <br>
+
+
+    Difficulty: <%= @route.difficulty %> <br>
+    Route Type: <%= @route.route_type %> <br>
+    Pitches/Height: <%= @route.pitches %> <br>
+    Description <br><%= @route.description %> <br>
 </p>
-Description <br><%= @route.description %> <br>
-Pictures <br>
+<hr>
+
+<h3>Pictures</h3> <br>
+<div class ="routepics">
 <% @route.pictures.each do |image| %>
-    <%= image_tag image, :size => "250x300" %><br>
+    <%= image_tag image, :size => "250x300" %> 
+    <br>
 <% end %>
-Add Images <br>
+</div>
+<br>
 <%= form_with model: @route do |form| %>
     <%= form.file_field :pictures, multiple: true %> <br>
-    <%= form.submit %>
+    <%= form.submit "Add Images"%>
 <% end %>
-<br>
-Comments <br>
-<%= link_to new_comment_path %> add Comments
-<br>
 
+<br>
+<hr>
+  <h3>Comments</h3>
+  <%= link_to 'Add Comment', "/routes/#{@route.id}/comments/new" %>
+  <ul>
+  <% @route.comments.each do |comment| %>
+    <li class="comment"> 
+    <%= comment.body %><br>
+    <%= comment.created_at %></li>
+    <br>
+  <% end %>
+  </ul>
 
