@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :routes
   resources :pictures
+  resources :ratings, only: [:update]
   get '/pages/:page' => 'pages#show'
 
   get '/login', to: 'sessions#new'

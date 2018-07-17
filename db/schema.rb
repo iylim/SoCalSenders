@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_16_213428) do
+ActiveRecord::Schema.define(version: 2018_07_17_004527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,17 @@ ActiveRecord::Schema.define(version: 2018_07_16_213428) do
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.bigint "user_id"
+    t.bigint "route_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["route_id"], name: "index_comments_on_route_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "pictures", force: :cascade do |t|
     t.string "title"
     t.bigint "user_id"
@@ -53,6 +64,16 @@ ActiveRecord::Schema.define(version: 2018_07_16_213428) do
     t.datetime "updated_at", null: false
     t.index ["route_id"], name: "index_pictures_on_route_id"
     t.index ["user_id"], name: "index_pictures_on_user_id"
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.bigint "route_id"
+    t.bigint "user_id"
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["route_id"], name: "index_ratings_on_route_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
   create_table "routes", force: :cascade do |t|
@@ -80,7 +101,11 @@ ActiveRecord::Schema.define(version: 2018_07_16_213428) do
 
   add_foreign_key "bookmarks", "routes"
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "comments", "routes"
+  add_foreign_key "comments", "users"
   add_foreign_key "pictures", "routes"
   add_foreign_key "pictures", "users"
+  add_foreign_key "ratings", "routes"
+  add_foreign_key "ratings", "users"
   add_foreign_key "routes", "users"
 end

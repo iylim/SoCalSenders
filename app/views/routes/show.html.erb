@@ -4,15 +4,24 @@
 <br>
 <hr>
 <p> 
-Rating: <%= @route.rating %> <br>
+Rating: <%= image_tag "4stars.png", :size => "80x25" %> < rate this route > <br>
 Difficulty: <%= @route.difficulty %> <br>
-Type: <%= @route.route_type %> <br>
+Route Type: <%= @route.route_type %> <br>
 Pitches/Height: <%= @route.pitches %> <br>
 </p>
 Description <br><%= @route.description %> <br>
-Pictures <br><%= @route.pictures %><br>
-
+Pictures <br>
+<% @route.pictures.each do |image| %>
+    <%= image_tag image, :size => "250x300" %><br>
+<% end %>
+Add Images <br>
+<%= form_with model: @route do |form| %>
+    <%= form.file_field :pictures, multiple: true %> <br>
+    <%= form.submit %>
+<% end %>
+<br>
 Comments <br>
-add Comments
-show comments
+<%= link_to new_comment_path %> add Comments
+<br>
+
 

@@ -1,10 +1,11 @@
 <h1>Routes<h1>
 
-List All Routes
+All Routes
 <ul>
-    <% @route.each do |route| %>
+    <% @routes.each do |route| %>
     <li><%= link_to route.name, "/routes/#{route.id}" %></li>
     <% end %>
 </ul>
 
+<br>
 <%= link_to 'New Route', new_route_path %>
