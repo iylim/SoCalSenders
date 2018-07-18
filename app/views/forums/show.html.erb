@@ -1,8 +1,8 @@
-<%= link_to 'All posts', forums_path %>
+<%= link_to 'All Posts', forums_path %>
 <br>
-<h1> <%= @forum.title %></h1>
+<h2> <%= @forum.title %></h2>
 <br>
-<p> <%= @forum.body %></p>
+<p class="forum"> <%= @forum.body %></p>
 <br>
 
 <ul>
@@ -15,8 +15,8 @@
 <br>
 <br>
 <%= form_for [@forum, @answer] do |f| %>
-    <%= f.label :body %>
+    <%= f.label :text %>
     <%= f.text_area :body %>
     <br>
-    <%= f.submit 'Add answer' %>
+    <%= f.submit 'Add Reply' %>
 <% end %>

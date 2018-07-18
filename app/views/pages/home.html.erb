@@ -1,18 +1,17 @@
 
+    <h1 class="home"><%= image_tag "logo.png", :size => "300x250" %>&nbsp;&nbsp; Southern California Climbers' Go-To Resource &nbsp;&nbsp;</h1>
     <br>
-    <h1><%= image_tag "logo.png", :size => "300x250" %></h1>
-    <h1> Southern California Climbers' Go-To Resource</h1>
-    <br>
+    <hr>
     <br>
     <div class="toppics"> 
-       <h4> Top 5 Pic</h4>
+       <h4> Top 5 Pic </h4>
        <ul>
-           <li>image 1</li>
-           <li>image 2</li>
-           <li>image 3</li>
-           <li>image 4</li>
-           <li>image 5</li>
-        </ul>
+        <div class="pics"> <%= image_tag "1.jpeg" %> </div>
+           <%= image_tag "2.jpeg" %>
+           <%= image_tag "3.jpeg"%>
+            <%= image_tag "4.jpeg" %>
+            <%= image_tag "5.jpeg"%>
+    </ul>
     </div>
     <div class="toproutes"> 
             <h4> Top 5 Routes</h4>
@@ -23,5 +22,4 @@
                 <li>Route 4 Name</li>
                 <li>Route 5 Name</li>
              </ul>
-         </div>
-</body>
+        </div>

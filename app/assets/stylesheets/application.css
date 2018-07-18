@@ -1,3 +1,7 @@
+ * {
+     font-family: 'Trebuchet MS';
+ }
+ 
  body {
     background-color: darkgray;
     text-align: center;
@@ -12,14 +16,12 @@ nav {
     font-size: 20px;
 }
 
-div {
+div.nav {
     padding: 0px 25px;
 }
 
-
 div.toppics {
-    display: flex;
-    float: left;
+    display: block;
 }
 
 div.toproutes {
@@ -47,4 +49,25 @@ ul {
   div.routepics {
     display: flex;
     padding: 0 10px;
+  }
+
+  h1.home {
+      background-image: url(jtree.jpeg);
+      background-size: cover;
+      color: black;
+      text-shadow: 1px 1px 2px darkgray;
+      display: flex;
+      text-align: center;
+      line-height: 250px;
+      justify-content: center;
+  };
+  div.pics {
+    border: 4px solid lightblue;
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+  }
+  .all {
+      columns: 3;
+      text-align: center;
   }

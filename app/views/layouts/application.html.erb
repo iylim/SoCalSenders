@@ -11,14 +11,15 @@
 
 <body>
     <nav> 
-        <div><%= image_tag 'logo.png', :size => '60x50' %></div>
-        <div><%= link_to 'Home', root_path %></div>
-        <div><%= link_to 'Routes', routes_path %></div>
-        <div><%= link_to 'Pictures', pictures_path %></div>
-        <div><%= link_to 'Forum', forums_path %></div>
-        <div><a href="/pages/rating"> Rating Info </a></div>
+        <div class="nav"><%= image_tag 'logo.png', :size => '60x50' %></div>
+        <div class="nav"><%= link_to 'Home', root_path %></div>
+        <div class="nav"><%= link_to 'Routes', routes_path %></div>
+        <div class="nav"><%= link_to 'Pictures', pictures_path %></div>
+        <div class="nav"><%= link_to 'Forum', forums_path %></div>
+        <div class="nav"><a href="/pages/rating"> Rating Info </a></div>
         <div class="search"><input placeholder="Search"></input> <button>Go</button> </div>
-    <div>
+        <div  class="nav"> &nbsp;&nbsp;&nbsp;&nbsp;</div>
+    <div class="nav">
     <% if current_user %>
       Welcome, <%= current_user.name %>
       &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -30,8 +31,6 @@
     <% end %>
 </div>
 </nav>
-<br>
-<br>
     <%= yield %>
   </body>
 </html>

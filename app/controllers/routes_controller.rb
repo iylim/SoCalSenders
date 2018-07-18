@@ -9,14 +9,13 @@ class RoutesController < ApplicationController
 
     def create
         @route = Route.new(route_params)
-        @route.user = current_user
+        @route.users = current_user
         @route.pictures.attach(params[:route][:pictures])
-        if @route.save 
+        if @route.save
             redirect_to routes_path
         else 
             render :new
         end
-          
     end
 
     def update
@@ -43,6 +42,6 @@ class RoutesController < ApplicationController
     private
 
     def route_params
-        params.require(:route).permit(:name, :difficulty, :route_type, :pitches, :description, :pictures, :route_id)
+        params.require(:route).permit(:name, :difficulty, :route_type, :pitches, :description, :pictures, :user_id)
     end
 end
