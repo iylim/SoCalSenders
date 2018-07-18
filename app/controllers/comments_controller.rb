@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
     def new
-        @comment = Comment.new
+        @route = Route.find(params[:route_id])
+        @comment = Comment.new(route_id: @route.id)
     end
 
     def create

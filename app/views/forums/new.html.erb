@@ -1,5 +1,8 @@
-<h1> Add comment </h1>
-<%= form_for [@route, @comment] do |f| %>
+<h1>Add New Post</h1>
+<hr>
+<br>
+
+<%= form_for @forum do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
     <br>
@@ -7,5 +10,4 @@
     <%= f.text_area :body %>
     <br>
     <%= f.submit 'Submit' %>
-
 <% end %>

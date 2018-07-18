@@ -7,7 +7,10 @@ Rails.application.routes.draw do
     resources :ratings, only: [:create]
   end
   resources :pictures
-
+  resources :forums do
+    resources :answers, only: [:new, :create]
+  end  
+ 
   get '/pages/:page' => 'pages#show'
 
   get '/login' => 'sessions#new'

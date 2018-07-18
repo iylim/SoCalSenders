@@ -1,0 +1,22 @@
+<%= link_to 'All posts', forums_path %>
+<br>
+<h1> <%= @forum.title %></h1>
+<br>
+<p> <%= @forum.body %></p>
+<br>
+
+<ul>
+  <% @answers.each do |answer| %>
+    <li><%= answer.body %>
+    <%= answer.created_at %></li>
+  <% end %>
+</ul>
+
+<br>
+<br>
+<%= form_for [@forum, @answer] do |f| %>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+    <br>
+    <%= f.submit 'Add answer' %>
+<% end %>

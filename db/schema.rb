@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_17_004527) do
+ActiveRecord::Schema.define(version: 2018_07_18_001641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 2018_07_17_004527) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "answers", force: :cascade do |t|
+    t.text "body"
+    t.bigint "forum_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["forum_id"], name: "index_answers_on_forum_id"
+  end
+
   create_table "bookmarks", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "route_id"
@@ -54,6 +62,15 @@ ActiveRecord::Schema.define(version: 2018_07_17_004527) do
     t.datetime "updated_at", null: false
     t.index ["route_id"], name: "index_comments_on_route_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "forums", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_forums_on_user_id"
   end
 
   create_table "pictures", force: :cascade do |t|
@@ -99,10 +116,12 @@ ActiveRecord::Schema.define(version: 2018_07_17_004527) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "answers", "forums"
   add_foreign_key "bookmarks", "routes"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "comments", "routes"
   add_foreign_key "comments", "users"
+  add_foreign_key "forums", "users"
   add_foreign_key "pictures", "routes"
   add_foreign_key "pictures", "users"
   add_foreign_key "ratings", "routes"

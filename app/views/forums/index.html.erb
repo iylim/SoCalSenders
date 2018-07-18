@@ -1,0 +1,11 @@
+<h1>Forum Posts</h1>
+
+<%= link_to 'Add Forum Post', new_forum_path %>
+<hr>
+<br>
+<ul>
+    <% @forums.each do |forum| %>
+    <li><%= link_to forum.title, forum_path(id: forum.id) %></li>
+    <% end %>
+</ul>
+<br>

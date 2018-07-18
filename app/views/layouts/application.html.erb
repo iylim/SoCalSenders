@@ -11,11 +11,11 @@
 
 <body>
     <nav> 
-        <div><%= image_tag "logo.png", :size => "60x50" %></div>
-        <div><a href="/"> Home </a></div>
-        <div><a href="/routes/"> Routes </a></div>
-        <div><a href="/pictures/"> Pictures </a></div>
-        <div><a href="#"> Forum </a></div>
+        <div><%= image_tag 'logo.png', :size => '60x50' %></div>
+        <div><%= link_to 'Home', root_path %></div>
+        <div><%= link_to 'Routes', routes_path %></div>
+        <div><%= link_to 'Pictures', pictures_path %></div>
+        <div><%= link_to 'Forum', forums_path %></div>
         <div><a href="/pages/rating"> Rating Info </a></div>
         <div class="search"><input placeholder="Search"></input> <button>Go</button> </div>
     <div>
