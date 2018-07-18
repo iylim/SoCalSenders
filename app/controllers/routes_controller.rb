@@ -9,7 +9,7 @@ class RoutesController < ApplicationController
 
     def create
         @route = Route.new(route_params)
-        @route.users = current_user
+        @route.user = current_user
         @route.pictures.attach(params[:route][:pictures])
         if @route.save
             redirect_to routes_path
