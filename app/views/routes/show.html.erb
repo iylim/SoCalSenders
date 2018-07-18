@@ -1,23 +1,32 @@
-<h3><%= link_to 'All routes', '/routes/' %></h3>
+<h3><%= link_to 'All Routes', '/routes/' %></h3>
 <h1> <%= @route.name %></h1>
 <hr>
 <p class ="route"> 
-    Rating: <%= image_tag "4stars.png", :size => "80x25" %> 
-   
-
+    Location: <%= @route.location %> <br>
+    Rating: <%= image_tag "4stars.png", :size => "80x25" %> <br>
     Difficulty: <%= @route.difficulty %> <br>
     Route Type: <%= @route.route_type %> <br>
     Pitches/Height: <%= @route.pitches %> <br>
     Description <br><%= @route.description %> <br>
 </p>
 <% if current_user %>
+<% if current_user.isAdmin == true %>
+<%= link_to 'Edit Route', edit_route_path %>
+<% end %><br>
   <% if !current_user.ratings.exists?(route: @route) %>
     <p>
+      <h4> Rate this Route </h4>
         <%= link_to "1", route_ratings_path(@route, score: 1), method: :post %> 
         <%= link_to "2", route_ratings_path(@route, score: 2), method: :post %> 
         <%= link_to "3", route_ratings_path(@route, score: 3), method: :post %> 
         <%= link_to "4", route_ratings_path(@route, score: 4), method: :post %> 
     </p>
+    <% end %>
+    <% if !current_user.bookmarks.exists?(params[:id]) %>
+      <%= link_to "Bookmark", bookmark_route_path, method: :put %>
+    <% else %>
+     Route bookmarked!<br>
+      <%= link_to "View My Bookmarks", user_bookmarks_path(current_user.id) %>
   <% end %>
 <% end %>
 <hr>
@@ -30,12 +39,14 @@
 <% end %>
 </div>
 <br>
+<div class="addimages">
   <% if current_user %>
     <%= form_with model: @route do |form| %>
       <%= form.file_field :pictures, multiple: true %> <br>
       <%= form.submit "Add Images"%>
     <% end %>
   <% end %>
+</div>
 <br>
 <hr>
   <h3>Comments</h3>

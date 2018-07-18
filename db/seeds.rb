@@ -3,27 +3,40 @@
 # admin: email, password, 
 User.destroy_all
 admin = User.create!(name: 'Ivy', email: 'email@gmail.com', password: '1234', password_confirmation: '1234', isAdmin: true)
+User.create!(name: 'test', email: 'test@email.com', password: 'password', password_confirmation: 'password')
 
 Route.destroy_all
-route = Route.create!(name: 'Lady Luck', difficulty: '5.7', pitches: '1, 100ft', description: 'Description goes here.', route_type: 'Sport', user_id: admin.id)
-route2 = Route.create!(name: 'Bad Luck', difficulty: '5.9', pitches: '1, 90ft', description: 'Description goes here.', route_type: 'Sport', user_id: admin.id)
-route3 = Route.create!(name: 'Bad Wolf', difficulty: '5.12a', pitches: '3, 390ft', description: 'Description goes here.', route_type: 'Sport, multipitch', user_id: admin.id) 
-# Route.create!(name: 'Another One', difficulty: '5.10', pitches: '1, 120ft', description: 'Description goes here.', route_type: 'Sport', user_id: 1)
-# Route.create!(name: 'Bad Wolf', difficulty: '5.12a', pitches: '3, 390ft', description: 'Description goes here.', route_type: 'Sport, multipitch', user_id: 1) 
-# Route.create!(name: 'Bad Luck', difficulty: '5.9', pitches: '1, 90ft', description: 'Description goes here.', route_type: 'Sport', user_id: 1)
-# Route.create!(name: 'Bad Wolf', difficulty: '5.12a', pitches: '3, 390ft', description: 'Description goes here.', route_type: 'Sport, multipitch', user_id: 1) 
-# Route.create!(name: 'Bad Luck', difficulty: '5.9', pitches: '1, 90ft', description: 'Description goes here.', route_type: 'Sport', user_id: 1)
-# Route.create!(name: 'Bad Wolf', difficulty: '5.12a', pitches: '3, 390ft', description: 'Description goes here.', route_type: 'Sport, multipitch', user_id: 1) 
-# Route.create!(name: 'Bad Luck', difficulty: '5.9', pitches: '1, 90ft', description: 'Description goes here.', route_type: 'Sport', user_id: 1)
-# Route.create!(name: 'Bad Wolf', difficulty: '5.12a', pitches: '3, 390ft', description: 'Description goes here.', route_type: 'Sport, multipitch', user_id: 1) 
-# Route.create!(name: 'Bad Luck', difficulty: '5.9', pitches: '1, 90ft', description: 'Description goes here.', route_type: 'Sport', user_id: 1)
-# Route.create!(name: 'Bad Wolf', difficulty: '5.12a', pitches: '3, 390ft', description: 'Description goes here.', route_type: 'Sport, multipitch', user_id: 1) 
-# Route.create!(name: 'Bad Luck', difficulty: '5.9', pitches: '1, 90ft', description: 'Description goes here.', route_type: 'Sport', user_id: 1)
-# Route.create!(name: 'Bad Wolf', difficulty: '5.12a', pitches: '3, 390ft', description: 'Description goes here.', route_type: 'Sport, multipitch', user_id: 1) 
-# Route.create!(name: 'Bad Luck', difficulty: '5.9', pitches: '1, 90ft', description: 'Description goes here.', route_type: 'Sport', user_id: 1)
-# Route.create!(name: 'Bad Wolf', difficulty: '5.12a', pitches: '3, 390ft', description: 'Description goes here.', route_type: 'Sport, multipitch', user_id: 1) 
-# Route.create!(name: 'Bad Luck', difficulty: '5.9', pitches: '1, 90ft', description: 'Description goes here.', route_type: 'Sport', user_id: 1)
-# Route.create!(name: 'Bad Wolf', difficulty: '5.12a', pitches: '3, 390ft', description: 'Description goes here.', route_type: 'Sport, multipitch', user_id: 1) 
-# Route.create!(name: 'Bad Luck', difficulty: '5.9', pitches: '1, 90ft', description: 'Description goes here.', route_type: 'Sport', user_id: 1)
-# Route.create!(name: 'Bad Wolf', difficulty: '5.12a', pitches: '3, 390ft', description: 'Description goes here.', route_type: 'Sport, multipitch', user_id: 1) 
+route = Route.create!(name: 'Lady Luck', location: 'Big Bear', difficulty: '5.9', pitches: '1, 100ft', description: 'Jam, stem and lieback your way up large flakes clipping bolts as you go. The crux is near the top and involves a somewhat wild move to get established on the upper face that leads to the anchors. 
+Short and kinda scrappy but perhaps still worth doing as a warmup or whilst waiting for nearby routes to free up.', route_type: 'Sport', user_id: admin.id)
+route2 = Route.create!(name: 'Mr. Bad Luck', location: 'Stone Crag', difficulty: '5.11c', pitches: '2, 190ft', description: "(1) Start up the first pitch of Firefly, climbing past that route's first three bolts. About 15 feet above the third bold, traverse left on casual terrain and up to a large ledge with chains. Walk left past the chains on the ledge for another 15 feet to a right-facing dihedral capped by a small roof, above which is a bolt. Go up the dihedral a ways to enjoyable face climbing past the bolt and then another to Brunch Ledge. 120' 5.9. 
+(2) Jam the obvious overhanging hand crack until possible to move right and up clipping three bolts en route to the crux. Above, either step right to get some gear (and a rest) or swallow hard and punch it to the last bolt and one last set of difficult moves to chains. This pitch was bolted to avoid two sets of huge loose blocks; don't be tempted to go yonder lest you risk devastatingly bad luck. 70' 5.11. 
+Trad rack, one each from small brass/steel (offsets useful) to a no.1 camalot; two no.2 camalots for the hand crack.", route_type: 'Sport', user_id: admin.id)
+route3 = Route.create!(name: 'Bad Wolf', location: 'Mountains', difficulty: 'V4', pitches: '1, 30ft', description: "Start in the back of the cave on 2 crimps just left of the vertical limestone drip. Traverse left on good good holds and a ramp for your feet until the ramp drops away. Keep going to the lip of the cave, and top out straight up. The top out isn't hard, but it is heady.
+Once you top out, hike up the hill side to the High Wire Right approach fixed lines to get back to the cave.", route_type: 'Boulder', user_id: admin.id) 
+Route.create!(name: 'Another One', difficulty: '5.10a', pitches: '1, 120ft', description: " ", route_type: 'Sport', user_id: admin.id)
+Route.create!(name: 'High Exposure', location: 'High Buttress',difficulty: '5.6', pitches: '2, 250ft', description: "The High E buttress is an obvious right-facing arete that is visible from the drive in from New Paltz. It is located about halfway along the base of the Trapps, right of the MF area and left of Bonnie's Roof. The High E access trail is about a 15 minute walk from the Uberfall.
+P1 (5.4, 180'): Begin the climb in a chimney/stemming corner left of the arete. Climb up this corner, only until it is possible to traverse up and right across the face, then climb up the face to a fantastic, spacious triangular belay ledge (this is the GT ledge) right on the arete below a large roof. Belay from natural gear or sling the huge boulder on the ledge.
+P2 (5.6, 100'): This is the money pitch, Climb up from the ledge (it's easiest to begin at the left side) and traverse right to the obvious place to turn the corner and make the move to pull the roof - the exposure is immediate and the rock is steep! Continue up the face past gear, jugs, and fixed pins, trending left back towards the arete, until you top out. Exhilarating!", route_type: 'Trad', user_id: admin.id) 
+Route.create!(name: 'Snake Dike', location: 'Yosemite', difficulty: '5.7 R', pitches: '8, 2000ft', description: "Get to the SW shoulder of Half Dome by following the Muir Trail to the Mist Trail past Nevada Falls, then back on the Muir Trail. From the top of Nevada Falls, continue for 0.75 mile to an obvious climber's trail that heads off to the left, contouring around behind the back of Liberty Cap to Half Dome. You'll pass a swampy area (Lost Lake), and then wander up slabs to the south face of Half Dome, heading back left across ledges to the base of the route. The approach is six miles and takes 2.5 to 4 hours. 
+P1: The route starts up a slab below a prominent upside-down L-shaped roof formation. A big tree is up in this roof area on the right. Climb up into the roof, then traverse out the left end and up onto a nice belay ledge. 5.7. 
+P2: Continue up the left-facing corner system above and past a pair of bolts (optional belay), then wander right past another bolt to a bolted anchor. 5.7. 
+P3: Climb up and left past a bolt and 5.7 friction to reach the dike itself. Skip another bolted belay, climbing up the dike past a bolt and easier climbing, and up to a bolted belay. 
+P4, P5, P6: Follow the dike for three more long pitches, all about 5.4, all very run out, stopping at bolted anchors. The final anchor is at a point past a steep section on a small ledge. 
+P7, P8: Lots of low angle climbing (easy 5th class) wander up the face with occasional gear placements. 
+Once you feel comfortable unroping, do so, and continue scrambling up 1000' of calf-burning slabs to the summit. Descent is down the Half Dome Cables route. You can't miss it.  6 draws/slings, three or four small-medium sized cams.", route_type: 'Trad', user_id: admin.id)
+Route.create!(name: 'White Rastafarian', location: 'Joshua Tree', difficulty: 'V2', pitches: '1, 20ft', description: "This problem is located on a large boulder at the Southeast end of Rock Hudson. Climb a juggy crack on an overhanging arete until it dies out 15 ft. up. Lean out left, onto the overhanging face, to a large flake. Finishes with an easy mantel 25 ft. off the deck. One of JTree's finest problems.", route_type: 'Boulder', user_id: admin.id) 
+Route.create!(name: 'The Nose', location: 'Yosemite', difficulty: '5.9', pitches: '31, 3000ft', description: "Although this is a great climb the route is still very demanding, sustained and exposed and not to be taken lightly. Bring two sets of nuts with offsets, one or two sets of micro nuts with offsets and two or three sets of cams from .5 to 3.5. Also bring some micro cams and a 4.5 cam, leave the hammer and pins at home this route goes all clean.", route_type: 'Trad', user_id: admin.id)
+Route.create!(name: 'Jedi Mind Tricks', location: 'Bishop', difficulty: 'V4 PG13', pitches: '1, 25ft', description: " The crux is right off the ground with very poor feet. Once you are high enough to use the flake with your feet it is smooth sailing to the very last move, which is the mental crux.", route_type: 'Boulder', user_id: admin.id) 
+Route.create!(name: "Bear's Reach", location: 'Lake Tahoe', difficulty: '5.7', pitches: '3, 400ft', description: "", route_type: 'Sport', user_id: admin.id)
+Route.create!(name: 'Bad Wolf', difficulty: '5.12a', pitches: '3, 390ft', description: 'Description goes here.', route_type: 'Sport, multipitch', user_id: admin.id) 
+Route.create!(name: 'Bad Luck', difficulty: '5.9', pitches: '1, 90ft', description: 'Description goes here.', route_type: 'Sport', user_id: admin.id)
+Route.create!(name: 'Bad Wolf', difficulty: '5.12a', pitches: '3, 390ft', description: 'Description goes here.', route_type: 'Sport, multipitch', user_id: admin.id) 
+Route.create!(name: 'Bad Luck', difficulty: '5.9', pitches: '1, 90ft', description: 'Description goes here.', route_type: 'Sport', user_id: admin.id)
+Route.create!(name: 'Bad Luck', difficulty: '5.9', pitches: '1, 90ft', description: 'Description goes here.', route_type: 'Boulder', user_id: admin.id)
+Route.create!(name: 'Bad Wolf', difficulty: '5.12a', pitches: '3, 390ft', description: 'Description goes here.', route_type: 'Boulder, multipitch', user_id: admin.id) 
+Route.create!(name: 'Bad Luck', difficulty: '5.9', pitches: '1, 90ft', description: 'Description goes here.', route_type: 'Boulder', user_id: admin.id)
+Route.create!(name: 'Bad Wolf', difficulty: '5.12a', pitches: '3, 390ft', description: 'Description goes here.', route_type: 'Trad, multipitch', user_id: admin.id) 
+Route.create!(name: 'Bad Luck', difficulty: '5.9', pitches: '1, 90ft', description: 'Description goes here.', route_type: 'Trad', user_id: admin.id)
+Route.create!(name: 'Bad Wolf', difficulty: '5.12a', pitches: '3, 390ft', description: 'Description goes here.', route_type: 'Trad, multipitch', user_id: admin.id) 
+Route.create!(name: 'Bad Wolf', difficulty: '5.12a', pitches: '3, 390ft', description: 'Description goes here.', route_type: 'Trad, multipitch', user_id: admin.id) 
 

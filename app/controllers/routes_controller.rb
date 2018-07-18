@@ -10,7 +10,9 @@ class RoutesController < ApplicationController
     def create
         @route = Route.new(route_params)
         @route.user = current_user
-        @route.pictures.attach(params[:route][:pictures])
+        if params[:route][:pictures]
+            @route.pictures.attach(params[:route][:pictures])
+        end
         if @route.save
             redirect_to routes_path
         else 
@@ -39,9 +41,15 @@ class RoutesController < ApplicationController
         @route = Route.find(params[:id])
     end
 
+    def bookmark
+        route = Route.find(params[:id])
+        current_user.bookmarks.create(route_id: route.id)
+        redirect_to route_path(route.id)
+    end
+
     private
 
     def route_params
-        params.require(:route).permit(:name, :difficulty, :route_type, :pitches, :description, :pictures, :user_id)
+        params.require(:route).permit(:name, :difficulty, :route_type, :pitches, :description, :pictures, :user_id, :location)
     end
 end

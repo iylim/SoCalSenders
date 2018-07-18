@@ -1,5 +1,4 @@
-<h1> Submit a New Route </h1>
-<%= form_for @route do |f| %>
+<%= form_for @route, url:{ controller: "routes", action: "update" }, method: :put do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name%>
 <br>
@@ -21,5 +20,5 @@
     <%= f.label :pictures %>
     <%= f.file_field :pictures, multiple: true %>
 <br>
- <%= f.submit 'Submit' %>
+ <%= f.submit 'Update' %>
  <% end %>

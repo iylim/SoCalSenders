@@ -1,13 +1,14 @@
 <h1>All Routes<h1>
-
-<ul class="all">
+<div class ="all">
+<ul>
     <% @routes.each do |route| %>
     <li><%= link_to route.name, route_path(id: route.id) %></li>
     <% end %>
 </ul>
+</div>
 <br>
 <hr>
 
-<% if current_user %>
+<% if current_user && current_user.isAdmin == true %>
 <%= link_to 'New Route', new_route_path %>
 <% end %>

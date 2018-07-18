@@ -1,13 +1,13 @@
+ /* main styles */
  * {
      font-family: 'Trebuchet MS';
  }
- 
  body {
     background-color: darkgray;
     text-align: center;
     align-content: center;
-}
-
+ }
+/* nav bar */
 nav {
     background-color: lightblue;
     display: flex;
@@ -15,25 +15,39 @@ nav {
     align-items: center;
     font-size: 20px;
 }
-
 div.nav {
-    padding: 0px 25px;
+    padding: 10px 25px;
 }
-
-div.toppics {
-    display: block;
+/* Home Page */
+h1.home {
+    margin-top: 0;
+    background-image: url(jtree.jpg);
+    background-size: cover;
+    color: black;
+    text-shadow: 1px 1px 2px darkgray;
+    display: flex;
+    text-align: center;
+    line-height: 250px;
+    justify-content: center;
 }
-
+div.gallery {
+    column-count: 4;
+    margin: 10px 20px;
+}
+div.thumbnail {
+    max-width: 300px;
+    max-height: 300px;
+}
 div.toproutes {
     display: flex;
-    float: right;
+    margin: 10px;
+    text-align: center;
 }
-
 img.logo {
     max-height: 100px;
     max-width: 100px;
 }
-
+/* routes page */
 span {
     display: flex;
     align-items: center;
@@ -41,33 +55,32 @@ span {
 .route {
     font-size: 20px;
 }
-
 ul {
     list-style-type: none;
-  }
-  
-  div.routepics {
+}
+div.routepics {
     display: flex;
     padding: 0 10px;
-  }
-
-  h1.home {
-      background-image: url(jtree.jpg);
-      background-size: cover;
-      color: black;
-      text-shadow: 1px 1px 2px darkgray;
+}
+.all {
       display: flex;
-      text-align: center;
-      line-height: 250px;
-      justify-content: center;
-  };
-  div.pics {
-    border: 4px solid lightblue;
-    max-width: 300px;
-    max-height: 300px;
-    object-fit: cover;
-  }
-  .all {
+      flex-wrap: wrap;
       columns: 3;
       text-align: center;
+}
+.all > ul {
+      flex-grow: 1;
+      width: 33%;
+      height: 100px;
+}
+  /* ratings page */
+div.container {
+    text-align: justify;
   }
+div.ydrs {
+}
+div.vermin {
+    float: right;
+}
+
+  /* forum */

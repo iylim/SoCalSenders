@@ -4,8 +4,9 @@
     <title>SoCal Senders</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -16,13 +17,14 @@
         <div class="nav"><%= link_to 'Routes', routes_path %></div>
         <div class="nav"><%= link_to 'Pictures', pictures_path %></div>
         <div class="nav"><%= link_to 'Forum', forums_path %></div>
-        <div class="nav"><a href="/pages/rating"> Rating Info </a></div>
-        <div class="search"><input placeholder="Search"></input> <button>Go</button> </div>
+        <div class="nav"><a href="/pages/rating"> Difficulty Info </a></div>
         <div  class="nav"> &nbsp;&nbsp;&nbsp;&nbsp;</div>
     <div class="nav">
     <% if current_user %>
       Welcome, <%= current_user.name %>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
+      &nbsp;|&nbsp;
+      <%= link_to "My Bookmarks", user_bookmarks_path(current_user.id) %>
+      &nbsp;|&nbsp;
       <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
     <% else %>
       <%= link_to 'Log In', login_path %>
