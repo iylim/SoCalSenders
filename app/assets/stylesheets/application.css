@@ -184,3 +184,18 @@ div.form-group {
     margin: 100px 400px;
     padding: 30px 10px;
 }
+
+#rating-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    top: 5px;
+    width: 64px;
+    height: 25px;
+}
+
+#rating-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

@@ -1,6 +1,5 @@
 class RatingsController < ApplicationController
     def index
-        # @ratings = (Rating.sum(score: params[:score])/Rating.count)
         @ratings = Rating.all
     end
 
@@ -16,6 +15,5 @@ class RatingsController < ApplicationController
     end
 
     def show
-        # @rating = Rating.score
     end
 end

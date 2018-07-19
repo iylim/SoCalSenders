@@ -4,6 +4,8 @@ class BookmarksController < ApplicationController
     end
     
     def destroy
-    
+        route = params[:id]
+        current_user.bookmarks.delete(route)
+        redirect_to user_bookmarks_path(current_user.id)
     end
 end
