@@ -1,3 +1,4 @@
+<div class="form-group">
 <%= form_for @route, url:{ controller: "routes", action: "update" }, method: :put do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name%>
@@ -22,3 +23,4 @@
 <br>
  <%= f.submit 'Update' %>
  <% end %>
+ </div>

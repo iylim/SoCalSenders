@@ -1,11 +1,13 @@
 <h1> Add comment </h1>
-<%= form_for [@route, @comment] do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <br>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-    <br>
-    <%= f.submit 'Submit' %>
-
-<% end %>
+<div class="form-group">
+    <%= form_for [@route, @comment] do |f| %>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+        <br>
+        <br>
+        <%= f.label :body %>
+        <%= f.text_area :body %>
+        <br>
+        <%= f.submit 'Submit' %>
+    <% end %>
+</div>

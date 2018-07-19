@@ -1,22 +1,30 @@
-<%= link_to 'All Posts', forums_path %>
-<br>
+<br><%= link_to 'All Posts', forums_path %> <br>
 <h2> <%= @forum.title %></h2>
-<br>
-<p class="forum"> <%= @forum.body %></p>
-<br>
 
-<ul>
-  <% @answers.each do |answer| %>
-    <li><%= answer.body %>
-    <%= answer.created_at %></li>
-  <% end %>
-</ul>
+<div class="forum">
+  <%= @forum.body %>
+  <br><br>
+</div>
 
+<div class="container">
 <br>
-<br>
-<%= form_for [@forum, @answer] do |f| %>
-    <%= f.label :text %>
-    <%= f.text_area :body %>
-    <br>
-    <%= f.submit 'Add Reply' %>
-<% end %>
+  <div class="addreply">
+    <%= form_for [@forum, @answer] do |f| %>
+      <%= f.label :text %>
+      <%= f.text_area :body, :size =>"50x5" %>
+      <br>
+      <%= f.submit 'Add Reply' %>
+    <% end %>
+  </div>
+  <br>
+  <div class="replies">
+    <h4>Replies</h4><br>
+    <ul>
+      <% @answers.each do |answer| %>
+        <li><%= answer.body %><br>
+        <%= answer.created_at %></li>
+        <hr>
+      <% end %>
+    </ul>
+  </div>
+</div>

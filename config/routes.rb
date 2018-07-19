@@ -12,11 +12,11 @@ Rails.application.routes.draw do
 
   resources :pictures
   resources :forums do
-    resources :answers, only: [:new, :create]
+    resources :answers, only: [:show, :create, :new]
   end  
  
   get '/pages/:page' => 'pages#show'
-
+  get '/bookmarks' => 'bookmarks#index'
   get '/login' => 'sessions#new'
   get '/logout' => 'sessions#destroy'
 

@@ -1,7 +1,6 @@
 <h1>Add New Post</h1>
 <hr>
-<br>
-
+<div class="form-group">
 <%= form_for @forum do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -11,3 +10,4 @@
     <br>
     <%= f.submit 'Submit' %>
 <% end %>
+</div>
