@@ -1,3 +1,4 @@
+
  /* main styles */
  * {
      font-family: 'Trebuchet MS';
@@ -9,6 +10,7 @@ body {
     text-align: center;
     align-content: center;
     color: #152b3f;
+    font-size: 20px;
  }
  hr {
      border-top: 1px solid#fedd94;
@@ -25,7 +27,6 @@ nav a:link {
 nav a:visited {
     color: #fedd94;
 }
-
 /* nav bar */
 nav {
     background-color: #152b3f;
@@ -33,7 +34,6 @@ nav {
     text-align: center;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
     color: coral;
 }
 div.nav {
@@ -53,6 +53,7 @@ h1.home {
 div.gallery {
     column-count: 4;
     margin: 10px 10px;
+    align-items: stretch;
 }
 div.thumbnail {
     background-color: coral;
@@ -82,9 +83,6 @@ span {
     display: flex;
     align-items: center;
 }
-.route {
-    font-size: 20px;
-}
 ul {
     list-style-type: none;
 }
@@ -111,25 +109,26 @@ div.users {
     text-align: right;
 }
 div.all {
-    
-    font-size: 20px;
-    width: 1000px;
+    display: grid;
     height: 600px;
     text-align: center;
     overflow: auto;
 }
-div.all > ul {
-    margin-top: 15px;
+.allroutes, .bookmarks {
     column-count: 5;
-    position: absolute;
-    flex-direction: row;
+    align-content: center;
+    justify-content: center;
 }
 .routeidx {
-    column-gap: 15px;
-    padding: 3px;
-    margin-bottom: 10px;
+    display: inline-block;
+    padding: auto;
+    margin: 20px 0;
+    width: 130px;
+    max-height: 60px;
+    height: 100%;
     border: 1px solid coral;
     background-color: rgb(119,127,149);
+    align-items: center;
 }
   /* ratings page */
 div.container {
@@ -138,7 +137,7 @@ div.container {
     text-align: justify;
     justify-content: center;
     align-items: center;
-  }
+}
 .ydrs, .vermin {
     color: coral;
     font-size: 14px;
@@ -159,32 +158,28 @@ div.addreply {
     float: right;
     text-align: right;
     color: coral;
+    padding: 5px;
 }
-textarea, input {
-    background-color:rgb(119,127,149, .8);
+/* forms */
+.form-control {
+    align-items: center;
+   justify-content: center;
 }
-/* bookmark page */
-  ul.bookmarks {
-    font-size: 20px;
-    margin-top: 15px;
-    column-count: 4;
-    flex-direction: row;
-    position: relative;
-}
-ul.bookmarks > li {
-    column-gap: 10px;
-    padding: 3px;
+div.form-container {
+    margin: 30px;
+    text-align: center;
 }
 div.form-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    max-width: 500px;
+    display: block;
     text-align: center;
     background-color: #777f95;
-    margin: 100px 400px;
-    padding: 30px 10px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 15px;
 }
-
+/* rating routes */
 #rating-wrapper {
     position: relative;
     display: inline-block;
@@ -193,7 +188,6 @@ div.form-group {
     width: 64px;
     height: 25px;
 }
-
 #rating-wrapper img {
     position: absolute;
     top: 0;

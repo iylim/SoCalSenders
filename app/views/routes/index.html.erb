@@ -8,7 +8,7 @@
     </h4></div> 
     <br>
     <div class ="all">
-    <ul>
+    <ul class="allroutes">
         <% @routes.each do |route| %>
         <li class="routeidx"><%= link_to route.name, route_path(id: route.id) %></li>
         <% end %>
