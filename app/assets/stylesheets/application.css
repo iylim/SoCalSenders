@@ -126,7 +126,7 @@ div.all {
     max-height: 60px;
     height: 100%;
     border: 1px solid coral;
-    background-color: rgba(119,127,149);
+    background-color: rgb(119,127,149);
     align-items: center;
 }
   /* ratings page */
