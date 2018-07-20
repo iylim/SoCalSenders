@@ -1,24 +1,34 @@
-# README
+# Read Me
+## Intro to SoCal Senders
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is made for rock climbers by a climber. It is community driven and updated by users; maintained by a team of admins. It features climbing routes in the area providing detailed descriptions, pictures, comments, and ratings. 
 
-Things you may want to cover:
 
-* Ruby version
+![Website Screenshot](https://i.imgur.com/4tisZPo.png)
 
-* System dependencies
+## Getting Started
+[SoCal Senders](https://socal-senders.herokuapp.com/ "SoCal Senders")
 
-* Configuration
+[User Stories](https://trello.com/b/PRx1bpem/socal-senders "Trello board")
 
-* Database creation
+Login to access features such as: adding photos to the route information, rating the routes, commenting on the routes and forum pages, and bookmarking routes.
 
-* Database initialization
+Test User Login.
+Email: test@email.com
+Password: password
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### Technologies Used
 
-* Deployment instructions
+* Ruby on Rails
+* HTML
+* CSS
+* Bootstrap
+* JavaScript
+* PostgreSQL
 
-* ...
+### Icebox
+* Add additional search features
+* User can suggest edits
+* Additional admin rights 
+* Make UI more user friendly
