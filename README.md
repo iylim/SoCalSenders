@@ -26,6 +26,7 @@ Password: password
 * Bootstrap
 * JavaScript
 * PostgreSQL
+* AWS
 
 ### Icebox
 * Add additional search features
