@@ -1,6 +1,6 @@
 class ForumsController < ApplicationController
     before_action :authorize
-
+    
     def index
         @forums = Forum.all
     end

@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+    before_action :authorize, only: [:create, :new]
+    before_action :authorize, except: [:index, :show]
+    
     def new
         @route = Route.find(params[:route_id])
         @comment = Comment.new(route_id: @route.id)

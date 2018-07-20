@@ -1,4 +1,7 @@
 class RatingsController < ApplicationController
+    before_action :authorize, only: [:create]
+    before_action :authorize, except: [:index, :show]
+    
     def index
         @ratings = Rating.all
     end
