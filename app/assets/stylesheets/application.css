@@ -12,7 +12,7 @@ body {
     font-size: 20px;
  }
  hr {
-     border-top: 1px solid#fedd94;
+     border-top: 1px solid #fedd94;
  }
  body a:link {
     color: coral;
@@ -42,10 +42,8 @@ div.nav {
 h1.home {
     margin-top: 0;
     height: 350px;
-    background-image: url("jtree.jpg");
-    background-size: cover;
     color: black;
-    text-shadow: 1px 1px 2px #777f95;
+    text-shadow: 1px 1px 2px gray;
     display: flex;
     text-align: center;
     line-height: 350px;
