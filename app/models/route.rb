@@ -11,4 +11,8 @@ class Route < ApplicationRecord
         self.ratings.each {|r| sum = sum + r.score }
         sum / self.ratings.count
     end
+
+    def self.search(search)
+        where("name ILIKE ? OR location ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+      end
 end

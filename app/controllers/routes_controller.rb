@@ -1,6 +1,11 @@
 class RoutesController < ApplicationController
     def index 
         @routes = Route.all
+        if params[:search]
+            @routes = Route.search(params[:search]).order("name DESC")
+          else
+            @routes = Route.all.order("name DESC")
+          end
     end
     
     def new

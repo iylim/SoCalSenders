@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#show', page: :home
-  resources :users, only: [:new, :create] do
+  resources :users, only: [:new, :create], shallow: true do
     resources :bookmarks, only: [:index, :destroy]
   end
   resources :sessions, only: [:new, :create, :destroy]

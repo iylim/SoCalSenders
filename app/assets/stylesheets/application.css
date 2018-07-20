@@ -4,7 +4,7 @@
  }
 body {
     height: 100%;
-    background-image: url(background);
+    background-image: url(background.png);
     background-size: 1500px 1000px;
     text-align: center;
     align-content: center;
@@ -41,6 +41,7 @@ div.nav {
 /* Home Page */
 h1.home {
     margin-top: 0;
+    height: 350px;
     background-image: url(jtree.jpg);
     background-size: cover;
     color: black;
@@ -50,22 +51,22 @@ h1.home {
     line-height: 350px;
 }
 div.gallery {
+    width: 100%;
     column-count: 4;
     margin: 10px 10px;
-    align-items: stretch;
+    flex-direction: row;    
 }
 div.thumbnail {
+    display: inline-block;
     background-color: coral;
     padding: 5px;
-    max-width: 300px;
-    max-height: 300px;
-    margin-bottom: 15px;
-    align-content: center;
+    max-width: 250px;
+    max-height: 250px;
+    margin: 15px 0;
     border: 0;
 }
-div.thumbnail > img {
-    max-width: 100%;
-    max-height: 100%;
+div.thumbnail img {
+    overflow: hidden;
     object-fit: scale-down;
 }
 div.toproutes {
@@ -142,6 +143,10 @@ div.container {
     font-size: 14px;
 }
 /* forum */
+.forumidx {
+    display: inline-block;
+    text-align: center;
+}
 .forum {
     text-align: center;
     background-color: rgba(119,127,149, .3);

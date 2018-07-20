@@ -4,7 +4,7 @@
     <div class="users">
         <%= link_to 'Add Forum Post', new_forum_path %>
     </div>
-    <div class ="all">
+    <div class ="forumidx">
         <ul>
             <% @forums.each do |forum| %>
             <li class="topics"><%= link_to forum.title, forum_path(id: forum.id) %></li><br>
