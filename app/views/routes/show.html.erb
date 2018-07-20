@@ -22,7 +22,7 @@
         <% else %>
           <li>Route bookmarked!<br>
             <%= link_to "View My Bookmarks", user_bookmarks_path(current_user.id) %><br>
-            <%= link_to "Remove from My Bookmarks", user_bookmark_path(current_user, current_user.bookmarks.find_by(route: @route)), method: :delete %> 
+            <%= link_to "Remove from My Bookmarks", bookmark_path(current_user.bookmarks.find_by(route: @route).id), method: :delete %> 
           </li>
         <% end %>
       <% end %>

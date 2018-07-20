@@ -1,12 +1,11 @@
 class AnswersController < ApplicationController
-    before_action :authorize, only:[:create, :new]
+    before_action :authorize, except: [:show]
 
     def new
         @answer = Answer.new
     end
     
     def create
-        # @answer.forum_id = params[forum: @forum]
         @answer = Answer.new(answer_params)
         @answer.forum_id = params[:forum_id]
        if @answer.save

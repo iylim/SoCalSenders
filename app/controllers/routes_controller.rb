@@ -1,6 +1,6 @@
 class RoutesController < ApplicationController
-    before_action :authorize, [:new, :create, :edit, :update]
-    
+    before_action :authorize, except: [:index, :show]
+
     def index 
         @routes = Route.all
         if params[:search]

@@ -42,7 +42,7 @@ div.nav {
 h1.home {
     margin-top: 0;
     height: 350px;
-    background-image: url(jtree.jpg);
+    background-image: url("jtree.jpg");
     background-size: cover;
     color: black;
     text-shadow: 1px 1px 2px #777f95;

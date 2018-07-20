@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    before_action :authorize, only: [:create, :new]
+    before_action :authorize, except: [:show]
     
     
     def new

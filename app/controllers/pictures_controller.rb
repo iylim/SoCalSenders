@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-    before_action :authorize, only: [:create, :new]
+    before_action :authorize, except: [:index, :show]
     
     def index 
         @pictures = Picture.all
