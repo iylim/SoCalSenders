@@ -9,7 +9,7 @@
   <div class="addreply">
     <%= form_for [@forum, @answer] do |f| %>
       <%= f.text_area :body, :size =>"50x5" %> <br>
-      <%= f.submit 'Add Reply' %>
+      <%= f.submit 'Add Reply', class: "btn btn-warning" %>
     <% end %>
   </div>
   <br>
