@@ -56,7 +56,7 @@
       <% if current_user %>
         <%= form_with model: @route do |form| %>
           <%= form.file_field :pictures, multiple: true %> <br>
-          <%= form.submit "Add Images"%>
+          <%= form.submit "Add Images", class: "btn btn-warning"%>
         <% end %>
       <% end %>
     </div>
