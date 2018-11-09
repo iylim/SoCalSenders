@@ -10,6 +10,7 @@ body {
     align-content: center;
     color: #152b3f;
     font-size: 20px;
+    background-size: cover;
  }
  hr {
      border-top: 1px solid #fedd94;
