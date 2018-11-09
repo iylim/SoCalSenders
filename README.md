@@ -4,7 +4,7 @@
 This app is made for rock climbers by a climber. It is community driven and updated by users; maintained by a team of admins. It features climbing routes in the area providing detailed descriptions, pictures, comments, and ratings. 
 
 
-![Website Screenshot](https://i.imgur.com/4tisZPo.png)
+![Website Screenshot](https://i.imgur.com/9VUqZcW.png)
 
 ## Getting Started
 [SoCal Senders](https://socal-senders.herokuapp.com/ "SoCal Senders")
