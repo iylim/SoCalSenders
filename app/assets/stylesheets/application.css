@@ -42,7 +42,8 @@ div.nav {
 h1.home {
     margin-top: 0;
     height: 350px;
-    color: black;
+    width: auto;
+    color: #fedd94;
     text-shadow: 1px 1px 2px gray;
     display: flex;
     text-align: center;
