@@ -4,11 +4,10 @@
  }
 body {
     height: 100%;
-    /* background-image: url("https://i.imgur.com/fxFwIF5.png"); */
-    background-color: rgb(63, 63, 63);
+    background-color: #152b3f;
     text-align: center;
     align-content: center;
-    color: #152b3f;
+    color: #fedd94;
     font-size: 20px;
     background-size: cover;
  }
@@ -29,7 +28,7 @@ nav a:visited {
 }
 /* nav bar */
 nav {
-    background-color: #152b3f;
+    background-color: rgb(70, 70, 72);
     display: flex;
     text-align: center;
     align-items: center;
@@ -48,6 +47,7 @@ h1.home {
     display: flex;
     text-align: center;
     line-height: 350px;
+    padding: 10px 30px;
 }
 div.gallery {
     width: 100%;
